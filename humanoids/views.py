@@ -65,10 +65,13 @@ def all_humanoids(request):
 
 @api_view(['GET'])
 def humanoid_detail(request, id):
-    humanoid = Humanoid.objects.get(id=id)
-    serializer = HumanoidDetailSerializer(humanoid, many=False)
+    try:
+        humanoid = Humanoid.objects.get(id=id)
+        serializer = HumanoidDetailSerializer(humanoid, many=False)
 
-    return Response(serializer.data)
+        return Response(serializer.data)
+    except:
+        return Response(status=status.HTTP_404_NOT_FOUND)
 
 
 @api_view(['GET'])
