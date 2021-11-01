@@ -2,7 +2,7 @@
 
 This is the server side code of Seek For Humanoid. The app is running on Heroku and provides an API with 3 endpoints:
 
-- https://boiling-journey-35582.herokuapp.com/api/humanoids for humanoids listing and searching
+- https://boiling-journey-35582.herokuapp.com/api/humanoids for humanoids listing and searching functionalities
 - https://boiling-journey-35582.herokuapp.com/api/humanoids/{:id} for single humanoid details
 - https://boiling-journey-35582.herokuapp.com/api/countries for the list of all available countries
 
@@ -18,7 +18,7 @@ To run the app locally you need these tools:
 
 ## Run
 
-After you have cloned the project install the dependencies:
+After you have cloned the project cd into the created folder and install the dependencies:
 
 ```
 $ poetry install
@@ -30,7 +30,7 @@ then create the database:
 $ poetry run python manage.py migrate
 ```
 
-Now you can populate the database with humanoids and download the images for each profile:
+Now run the following command to populate the database with humanoids and download the images for each profile:
 
 ```
 $ FAKE_JSON_TOKEN=<YOUR_FAKE_JSON_TOKEN> poetry run python manage.py pullhumanoids
